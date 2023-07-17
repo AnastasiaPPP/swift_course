@@ -1,0 +1,9 @@
+var k = 9
+for i in 10...50 {
+    if (i + k) % 2 == 0 {
+        k += 1
+    } else {
+        print("Next")
+        break
+    }
+}
