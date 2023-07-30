@@ -38,9 +38,16 @@ class Pizzeria {
 
     private var pizza: [Pizza] = []
 
-    init(pizza: [Pizza]) {
+        init(pizza: [Pizza]) {
         self.pizza = pizza
         }
+
+        convenience init() {
+            let margarita_ = Pizza(name: .margarita, cost: 125, dough: "Толстое", ingr: .cheese)
+            let roman_ = Pizza(name: .roman, cost: 115, dough: "Толстое", ingr: .nothing)
+            self.init(pizza: [margarita_, roman_])
+}
+
     
     func addPizza(pizza:Pizza){
         self.pizza.append(pizza)
@@ -54,7 +61,9 @@ class Pizzeria {
 
 let firstPizza = Pizza(name: .bavarian, cost: 120, dough: "Тонкое", ingr: .mushrooms)
 let secondPizza = Pizza(name: .cheese, cost: 110, dough: "Тонкое", ingr: .nothing)
-var myPizzeria = Pizzeria(pizza: [firstPizza, secondPizza])
+var myPizzeria = Pizzeria()
+myPizzeria.addPizza(pizza: firstPizza)
+myPizzeria.addPizza(pizza: secondPizza)
 print(myPizzeria.getPizzas())
 
 
