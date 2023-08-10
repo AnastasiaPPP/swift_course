@@ -34,9 +34,37 @@ struct Pizza {
    
 }
 
+/*
+ Создать структуру работника пиццерии. В ней должны быть такие свойства, как имя, зарплата и должность. 
+ Должностей пока может быть две: или кассир, или повар. Добавить в класс пиццерии массив с работниками.
+ Создать класс столика, в нем должны быть свойство, в котором содержится количество мест и функция, 
+ которая на вход принимает количество гостей, которое хотят посадить, а возвращает true, если места хватает и false, 
+ если места не хватает. Изначальное количество мест задается в инициализаторе.
+ Добавить в класс пиццерии свойство, в котором хранится массив столиков. 
+ У класса столика добавить свойство, в котором хранится пиццерия, в которой стоит столик. 
+ Столики создаются сразу в инициализаторе, не передаются туда в качестве параметра.
+ */
+// struct Worker {
+//     var name: String
+//     var salary: Double
+//     var position: Profession
+//     enum Profession {
+//         case teller
+//         case chef
+    
+//         init(position: String) {
+//             switch position  {
+//             case "Кассир": self = .teller
+//             case "Повар": self = .chef
+//             }
+//     }
+//     }
+// }
+
 class Pizzeria {
 
     private var pizza: [Pizza] = []
+    //private var workers: [Worker] = []
 
         init(pizza: [Pizza]) {
         self.pizza = pizza
@@ -64,6 +92,4 @@ let secondPizza = Pizza(name: .cheese, cost: 110, dough: "Тонкое", ingr: .
 var myPizzeria = Pizzeria()
 myPizzeria.addPizza(pizza: firstPizza)
 myPizzeria.addPizza(pizza: secondPizza)
-print(myPizzeria.getPizzas())
-
-
+dump(myPizzeria.getPizzas())
